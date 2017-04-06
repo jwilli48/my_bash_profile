@@ -40,4 +40,5 @@ export PATH="$GEM_HOME/bin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+#Quick fix to getting rvm to start ruby on the correct version I want it to
 rvm default
