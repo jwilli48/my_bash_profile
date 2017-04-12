@@ -15,11 +15,21 @@ export BLOCKSIZE=1k
 alias ll='ls -FGlAhp'
 cd() { builtin cd "$@"; ll;}
 
+#Alias for CD .. to be just ..
+alias ..='cd ..'
+#Make a directory and then enter it.
+mkcd() { /bin/mkdir . -name "$@"; cd "$@"; }
+
+#Change path for vim to get correct vim installed by Homebrew
+export PATH="/usr/local/bin/:$PATH"
+
+#Settings for Finding files and Directories.
 alias qfind="find . -name "            #qfind: Quickly search for file
 ff () { /usr/bin/find . -name "$@" ; } #find file under the current directory
 ffs () { /usr/bin/find . -name "$@"'*' ; } #ffs find file whose name starts with a given string
 ffe () { /usr/bin/find . -name '*'"$@" ; } #ffe find file whose name ends with given string
 
+#Get your ip address
 alias myip='curl ip.appspot.com'
 
 #   ii:  display useful host related informaton
@@ -38,7 +48,8 @@ alias myip='curl ip.appspot.com'
 
 export PATH="$GEM_HOME/bin:$PATH"
 
+#For Ruby Version Manager
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-#Quick fix to getting rvm to start ruby on the correct version I want it to
+#Quick fix to get rvm to start on the version of ruby that I want it to
 rvm default
